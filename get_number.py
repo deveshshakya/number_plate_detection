@@ -14,7 +14,7 @@ def fix_dimension(img):
 
 def show_results(model, chars_list):
     dic = {}
-    characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXY2'
+    characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'
     for i, c in enumerate(characters):
         dic[i] = c
 
