@@ -33,12 +33,12 @@ def show_results(model, chars_list):
     return plate_number
 
 
-if __name__ == '__main__':
+def get_plate_number(image_link):
     model = load_model('model.h5')
-    image = cv2.imread('images/1.jpg')
+    image = cv2.imread(image_link)
     plate_img, plate = extract_plate(image)
     cv2.imwrite('image_with_plate.jpg', plate_img)
     cv2.imwrite('plate.jpg', plate)
     chars = segment_characters(plate)
     number = show_results(model, chars)
-    print(number)
+    return number
