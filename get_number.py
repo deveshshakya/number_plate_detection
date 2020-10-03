@@ -14,13 +14,13 @@ def fix_dimension(img):
 
 def show_results(model, chars_list):
     dic = {}
-    characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXY2'
     for i, c in enumerate(characters):
         dic[i] = c
 
     output = []
 
-    for i, ch in enumerate(chars_list):
+    for i, ch in enumerate(chars_list[:10]):
         img_ = cv2.resize(ch, (28, 28))
         img = fix_dimension(img_)
         img = img.reshape(1, 28, 28, 3)
@@ -35,7 +35,7 @@ def show_results(model, chars_list):
 
 if __name__ == '__main__':
     model = load_model('model.h5')
-    image = cv2.imread('images/vehicle.jpg')
+    image = cv2.imread('images/1.jpg')
     plate_img, plate = extract_plate(image)
     cv2.imwrite('image_with_plate.jpg', plate_img)
     cv2.imwrite('plate.jpg', plate)
