@@ -24,7 +24,7 @@ model.add(Dense(36, activation='softmax'))
 model.compile(loss='categorical_crossentropy', optimizer=optimizers.Adam(lr=0.00001), metrics=['accuracy'])
 
 batch_size = 1
-callbacks = [tensor_board_callback, stopTrainingCallback()]
+
 model.fit_generator(
     train_generator,
     steps_per_epoch=train_generator.samples // batch_size,
