@@ -9,7 +9,7 @@ def extract_plate(img):
     """
     plate_img = img.copy()
 
-    classifier_path = '/home/dshakya29/PycharmProjects/number_plate_detection/scripts/cascade/indian_license_plate.xml'
+    classifier_path = # Put cascade classifier path here
 
     plate_cascade = cv2.CascadeClassifier(classifier_path)
     plate_rect = plate_cascade.detectMultiScale(plate_img, scaleFactor=1.5, minNeighbors=7)
