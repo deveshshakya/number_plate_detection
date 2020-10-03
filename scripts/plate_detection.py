@@ -21,8 +21,8 @@ def find_contours(dimensions, img):
     x_contours_list = []
     img_res = []
 
-    for contours in contours:
-        intX, intY, intWidth, intHeight = cv2.boundingRect(contours)
+    for contour in contours:
+        intX, intY, intWidth, intHeight = cv2.boundingRect(contour)
 
         if lower_width < intWidth < upper_width and lower_height < intHeight < upper_height:
             x_contours_list.append(intX)
